@@ -4,41 +4,41 @@ class Tipo(var tipo: String) {
     companion object {
         fun calcularEfectividad(tipoAtaque: Tipo, tipoActual: Tipo): Efectividad {
             return when (tipoActual.tipo) {
-                "" -> when (tipoAtaque.tipo) {
-                    "" -> Efectividad.MUY_EFECTIVO
-                    "" -> Efectividad.POCO_EFECTIVO
-                    "" -> Efectividad.SIN_EFECTO
+                "Roca" -> when (tipoAtaque.tipo) {
+                    "Fuego" -> Efectividad.MUY_EFECTIVO
+                    "Tierra","Acero" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
                 }
-                "" -> when (tipoAtaque.tipo) {
-                    "" -> Efectividad.MUY_EFECTIVO
-                    "" -> Efectividad.POCO_EFECTIVO
-                    "" -> Efectividad.SIN_EFECTO
+                "Fuego" -> when (tipoAtaque.tipo) {
+                    "Planta","Acero" -> Efectividad.MUY_EFECTIVO
+                    "Agua","Tierra","Roca" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
                 }
-                "" -> when (tipoAtaque.tipo) {
-                    "" -> Efectividad.MUY_EFECTIVO
-                    "" -> Efectividad.POCO_EFECTIVO
-                    "" -> Efectividad.SIN_EFECTO
+                "Agua" -> when (tipoAtaque.tipo) {
+                    "Fuego","Tierra","Roca" -> Efectividad.MUY_EFECTIVO
+                    "Acero", "Electrico","Planta" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
                 }
-                "" -> when (tipoAtaque.tipo) {
-                    "" -> Efectividad.MUY_EFECTIVO
-                    "" -> Efectividad.POCO_EFECTIVO
-                    "" -> Efectividad.SIN_EFECTO
+                "Tierra" -> when (tipoAtaque.tipo) {
+                    "Electrico","Fuego","Acero","Roca" -> Efectividad.MUY_EFECTIVO
+                    "Agua","Planta" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
                 }
-                "" -> when (tipoAtaque.tipo) {
-                    "" -> Efectividad.MUY_EFECTIVO
-                    "" -> Efectividad.POCO_EFECTIVO
-                    "" -> Efectividad.SIN_EFECTO
+                "Electrico" -> when (tipoAtaque.tipo) {
+                    "Agua" -> Efectividad.MUY_EFECTIVO
+                    "Roca" -> Efectividad.POCO_EFECTIVO
+                    "Tierra" -> Efectividad.SIN_EFECTO
                     else -> Efectividad.NORMAL
                 }
-                "" -> when (tipoAtaque.tipo) {
-                    "" -> Efectividad.MUY_EFECTIVO
-                    "" -> Efectividad.POCO_EFECTIVO
-                    "" -> Efectividad.SIN_EFECTO
+                "Planta" -> when (tipoAtaque.tipo) {
+                    "Agua","Roca" -> Efectividad.MUY_EFECTIVO
+                    "Fuego","Acero" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
+                }
+                "Acero" -> when (tipoAtaque.tipo){
+                    "Roca" -> Efectividad.MUY_EFECTIVO
+                    "Fuego","Tierra" -> Efectividad.POCO_EFECTIVO
+                    else ->Efectividad.NORMAL
                 }
                 else -> Efectividad.NORMAL
             }
