@@ -10,4 +10,7 @@ fun main() {
 
     val tipos = Tipo.obtenerTipos()
     tipos.forEach { println(it.tipo) }
+
+    val ataques = GestionAtaque.obtenerAtaques()
+    ataques.forEach { println(it.name) }
 }

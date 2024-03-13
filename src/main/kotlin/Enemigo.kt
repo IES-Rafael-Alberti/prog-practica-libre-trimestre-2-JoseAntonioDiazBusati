@@ -8,4 +8,7 @@ class Enemigo(
     override fun recibirAtaque(ataque: Ataque): Int {
         return super.recibirAtaque(ataque)
     }
+    fun ataqueEnemigo(){
+
+    }
 }
