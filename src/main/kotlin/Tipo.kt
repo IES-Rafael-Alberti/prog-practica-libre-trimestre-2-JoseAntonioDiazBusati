@@ -2,6 +2,19 @@ package org.practicatrim2
 
 class Tipo(var tipo: String) {
     companion object {
+        private val listaTipo = mutableListOf<Tipo>()
+        init {
+            listaTipo.add(Tipo("Roca"))
+            listaTipo.add(Tipo("Fuego"))
+            listaTipo.add(Tipo("Agua"))
+            listaTipo.add(Tipo("Tierra"))
+            listaTipo.add(Tipo("Electrico"))
+            listaTipo.add(Tipo("Planta"))
+            listaTipo.add(Tipo("Acero"))
+        }
+        fun obtenerTipos(): List<Tipo> {
+            return listaTipo.toList()
+        }
         fun calcularEfectividad(tipoAtaque: Tipo, tipoActual: Tipo): Efectividad {
             return when (tipoActual.tipo) {
                 "Roca" -> when (tipoAtaque.tipo) {
@@ -31,7 +44,7 @@ class Tipo(var tipo: String) {
                     else -> Efectividad.NORMAL
                 }
                 "Planta" -> when (tipoAtaque.tipo) {
-                    "Agua","Roca" -> Efectividad.MUY_EFECTIVO
+                    "Agua","Roca","Tierra" -> Efectividad.MUY_EFECTIVO
                     "Fuego","Acero" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
                 }

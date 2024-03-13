@@ -8,5 +8,6 @@ fun main() {
     val jugador1 = mbappe
     val jugador2 = alkhelaifi
 
-    while (jugador1.vida > 0 && jugador2.vida > 0) {}
+    val tipos = Tipo.obtenerTipos()
+    tipos.forEach { println(it.tipo) }
 }
