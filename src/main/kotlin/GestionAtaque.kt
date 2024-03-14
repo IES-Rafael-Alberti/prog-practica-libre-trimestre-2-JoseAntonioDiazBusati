@@ -2,7 +2,7 @@ package org.practicatrim2
 
 class GestionAtaque {
     companion object {
-        private val listaAtaques = mutableListOf<Ataque>()
+        val listaAtaques = mutableListOf<Ataque>()
         private val tipoFuego = Tipo("Fuego")
         private val tipoAgua = Tipo("Agua")
         private val tipoRoca = Tipo("Roca")
@@ -28,7 +28,7 @@ class GestionAtaque {
             listaAtaques.add(Ataque("Hidropulso", tipoAgua,70))
             listaAtaques.add(Ataque("Puño fuego", tipoFuego,70))
             listaAtaques.add(Ataque("Latigazo", tipoPlanta,65))
-            listaAtaques.add(Ataque("Fuerza equina", tipoFuego,90))
+            listaAtaques.add(Ataque("Fuerza equina", tipoTierra,90))
             listaAtaques.add(Ataque("Avalancha", tipoRoca,75))
             listaAtaques.add(Ataque("Rayo", tipoElectrico,90))
             listaAtaques.add(Ataque("Cabeza de hierro", tipoAcero,80))
@@ -46,5 +46,6 @@ class GestionAtaque {
         fun obtenerAtaques(): List<Ataque> {
             return listaAtaques.toList()
         }
+
     }
 }

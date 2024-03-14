@@ -8,7 +8,9 @@ class Enemigo(
     override fun recibirAtaque(ataque: Ataque): Int {
         return super.recibirAtaque(ataque)
     }
-    fun ataqueEnemigo(){
-
+    fun obtenerAtaquesEnemigos():List<Ataque>{
+        return GestionAtaque.listaAtaques.shuffled().take(4)
+    }
+    fun atacar(jugador: Jugador) {
     }
 }

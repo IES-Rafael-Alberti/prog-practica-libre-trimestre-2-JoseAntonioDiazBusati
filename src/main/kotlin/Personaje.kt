@@ -15,4 +15,5 @@ open class Personaje(
         vida =- danio
         return vida
     }
+
 }
