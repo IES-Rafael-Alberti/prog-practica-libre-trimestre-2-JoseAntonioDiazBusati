@@ -34,18 +34,5 @@ class GestionAtaque {
             listaAtaques.add(Ataque("Cabeza de hierro", tipoAcero,80))
             listaAtaques.add(Ataque("Terremoto", tipoTierra,100))
         }
-
-        fun anadirAtaque(ataque: Ataque) {
-            listaAtaques.add(ataque)
-        }
-
-        fun eliminarAtaque(ataque: Ataque) {
-            listaAtaques.remove(ataque)
-        }
-
-        fun obtenerAtaques(): List<Ataque> {
-            return listaAtaques.toList()
-        }
-
     }
 }

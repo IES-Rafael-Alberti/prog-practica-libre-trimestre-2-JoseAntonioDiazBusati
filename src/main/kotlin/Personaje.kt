@@ -5,15 +5,9 @@ open class Personaje(
     var vida:Int,
     velocidad:Int) {
     open fun recibirAtaque(ataque: Ataque): Int {
-        val efectividad = Tipo.calcularEfectividad(ataque.type,this.tipo)
-        val danio = when (efectividad) {
-            Efectividad.MUY_EFECTIVO -> ataque.damage * 2
-            Efectividad.POCO_EFECTIVO -> ataque.damage / 2
-            Efectividad.SIN_EFECTO -> 0
-            else -> ataque.damage
-        }
-        vida =- danio
-        return vida
+        val efectividad = tipo.calcularEfectividad(ataque.type)
+        val danio = (ataque.damage * efectividad.valor).toInt()
+        vida -= danio
+        return danio
     }
-
 }
