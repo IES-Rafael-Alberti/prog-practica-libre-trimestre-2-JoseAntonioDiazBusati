@@ -105,7 +105,7 @@ fun main() {
     }
     println("Una vez derrotado continuas...")
     println("Finalmente estás cara a cara contra tu peor pesadilla, es el horrible presidente de tu club que no" +
-            "te permite ir a tu destino: el Real Madrid. Espero que lo hayas hecho bien hasta llegar aquí.")
+            " te permite ir a tu destino: el Real Madrid. Espero que lo hayas hecho bien hasta llegar aquí.")
     var continuaCombate3 = true
     while (continuaCombate3) {
         val masRapido = determinarMasRapido(alkhelaifi, mbappe)
