@@ -7,17 +7,15 @@ fun main() {
     val kloop = Enemigo("Jürgen Klopp",Tipo("Acero"),190,7)
     val macron = Enemigo("Emmanuel Macron",Tipo("Agua"),160,15)
 
-    val enemigos = mutableListOf(macron,luisenrique, kloop, alkhelaifi)
-
-    while (mbappe.vida > 0 && enemigos.any { it.vida > 0 }) {
-        val enemigoActivo = enemigos.firstOrNull { it.vida > 0 }
-        if (enemigoActivo != null) {
-            mbappe.atacar(enemigoActivo)
-            if (enemigoActivo.vida <= 0) {
-                println("${enemigoActivo.nombre} ha sido derrotado.")
-                enemigos.remove(enemigoActivo)
+    while (mbappe.vida > 0 && macron.vida > 0) {
+        if (macron != null) {
+            val ataqueSeleccionadoJugador = mbappe.ataquesDelJugador()
+            mbappe.atacar(ataqueSeleccionadoJugador, macron)
+            if (macron.vida <= 0) {
+                println("${macron.nombre} ha sido derrotado.")
             } else {
-                enemigoActivo.atacar(mbappe)
+                val ataqueSeleccionadoEnemigo = macron.atacar(mbappe)
+                macron.recibirAtaque(ataqueSeleccionadoEnemigo)
                 if (mbappe.vida <= 0) {
                     println("${mbappe.nombre} ha sido derrotado.")
                     return

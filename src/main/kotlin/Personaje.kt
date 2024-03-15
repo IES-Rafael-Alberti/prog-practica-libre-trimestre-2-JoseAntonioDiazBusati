@@ -9,7 +9,7 @@ open class Personaje(
         val danio = when (efectividad) {
             Efectividad.MUY_EFECTIVO -> ataque.damage * 2
             Efectividad.POCO_EFECTIVO -> ataque.damage / 2
-            Efectividad.SIN_EFECTO -> ataque.damage * 0
+            Efectividad.SIN_EFECTO -> 0
             else -> ataque.damage
         }
         vida =- danio

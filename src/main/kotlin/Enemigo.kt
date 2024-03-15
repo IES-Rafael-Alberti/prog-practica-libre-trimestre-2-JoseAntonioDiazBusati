@@ -11,6 +11,9 @@ class Enemigo(
     fun obtenerAtaquesEnemigos():List<Ataque>{
         return GestionAtaque.listaAtaques.shuffled().take(4)
     }
-    fun atacar(jugador: Jugador) {
+    fun atacar(jugador: Jugador): Ataque {
+        val ataqueSeleccionadoE = obtenerAtaquesEnemigos().random()
+        println("$nombre utiliza ${ataqueSeleccionadoE.name}!")
+        return ataqueSeleccionadoE
     }
 }
