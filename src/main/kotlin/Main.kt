@@ -11,7 +11,7 @@ fun main() {
         return if (enemigo.velocidad > jugador.velocidad) enemigo else jugador
     }
 
-
+1
     println("Parece que te ha asaltado el presidente de Francia para detenerte y que no llegues a tu destino...")
     while (continuaCombate) {
         val masRapido = determinarMasRapido(macron, mbappe)

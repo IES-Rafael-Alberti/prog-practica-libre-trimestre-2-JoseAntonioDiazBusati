@@ -1,8 +1,12 @@
 package org.practicatrim2
-
+/**
+ * Clase que gestiona la lista de ataques disponibles en el juego.
+ */
 class GestionAtaque {
     companion object {
+        /** Lista mutable que almacena los diferentes tipos de ataques disponibles. */
         val listaAtaques = mutableListOf<Ataque>()
+        /** Tipos de ataque predefinidos para su uso en la lista de ataques. */
         private val tipoFuego = Tipo("Fuego")
         private val tipoAgua = Tipo("Agua")
         private val tipoRoca = Tipo("Roca")
@@ -11,6 +15,7 @@ class GestionAtaque {
         private val tipoAcero = Tipo("Acero")
         private val tipoElectrico = Tipo("Electrico")
 
+        /** Inicializa la lista de ataques con los ataques predefinidos y sus tipos correspondientes. */
         init {
             listaAtaques.add(Ataque("Lanzallamas", tipoFuego,90))
             listaAtaques.add(Ataque("Hidroariete", tipoAgua,85))
