@@ -66,29 +66,38 @@ Este conjunto de preguntas está diseñado para ayudarte a reflexionar sobre có
 
 #### **Criterio global 1: Instancia objetos y hacer uso de ellos**
 - **(2.a, 2.b, 2.c, 2.d, 2.f, 2.h, 4.f, 4.a)**: Describe cómo has instanciado y utilizado objetos en tu proyecto. ¿Cómo has aplicado los constructores y pasado parámetros a los métodos? Proporciona ejemplos específicos de tu código.
+ En mi proyecto, instancié y utilicé objetos para representar tanto a los jugadores como a los enemigos del juego. Por ejemplo, creé instancias de la clase Jugador y Enemigo con diferentes atributos como nombre, tipo, vida y velocidad. Utilicé constructores para inicializar estos objetos con valores específicos y pasé parámetros a los métodos para realizar acciones como atacar y recibir ataques. Por ejemplo:
+
+kotlin
+
+val mbappe = Jugador("Mbappé", Tipo("Electrico"), 600, 10)
+val alkhelaifi = Enemigo("Al-Khelaïfi", Tipo("Tierra"), 400, 13)
+
+mbappe.atacar(alkhelaifi)
 
 #### **Criterio global 2: Crear y llamar métodos estáticos**
 - **(4.i)**: ¿Has definido algún método/propiedad estático en tu proyecto? ¿Cuál era el objetivo y por qué consideraste que debía ser estático en lugar de un método/propiedad de instancia?
+ En mi proyecto, no he definido métodos o propiedades estáticas ya que no encontré la necesidad de utilizarlas.
 - **(2.e)**: ¿En qué parte del código se llama a un método estático o se utiliza la propiedad estática?
 
 #### **Criterio global 3: Uso de entornos**
 - **(2.i)**: ¿Cómo utilizaste el IDE para el desarrollo de tu proyecto? Describe el proceso de creación, compilación, y prueba de tu programa.
-
+Utilicé Intellij Idea Comunity edition que proporcionó herramientas como resaltado de sintaxis, sugerencias de código y depuración paso a paso para facilitar el desarrollo de mi proyecto.
 #### **Criterio global 4: Definir clases y su contenido**
 - **(4.b, 4.c, 4.d, 4.g)**: Explica sobre un ejemplo de tu código, cómo definiste las clases en tu proyecto, es decir como identificaste las de propiedades, métodos y constructores y modificadores del control de acceso a métodos y propiedades, para representar al objeto del mundo real. ¿Cómo contribuyen estas clases a la solución del problema que tu aplicación aborda?
-
+ En mi proyecto, definí varias clases para representar diferentes entidades del juego, como Jugador, Enemigo, Ataque, Tipo, entre otras. Cada clase tiene propiedades para representar características específicas de la entidad, métodos para realizar acciones relacionadas con la entidad y constructores para inicializar objetos con valores específicos. Por ejemplo, en la clase Ataque, definí propiedades para el nombre, tipo y daño del ataque, y un constructor para inicializar estas propiedades
 #### **Criterio global 5: Herencia y uso de clases abstractas e interfaces**
 - **(4.h, 4.j, 7.a, 7.b, 7.c)**: Describe sobre tu código cómo has implementado la herencia o utilizado interfaces en tu proyecto. ¿Por qué elegiste este enfoque y cómo beneficia a la estructura de tu aplicación? ¿De qué manera has utilizado los principios SOLID para mejorar el diseño de tu proyecto? ¿Mostrando tu código, contesta a qué principios has utilizado y qué beneficio has obtenido?
-
+ En mi proyecto, utilicé herencia para representar la relación entre las diferentes entidades del juego. Por ejemplo, la clase Jugador y Enemigo heredan de la clase Personaje, que contiene propiedades y métodos comunes a ambos. También utilicé interfaces como DarAtaques para definir un conjunto común de comportamientos para clases que pueden proporcionar y calcular ataques.
 #### **Criterio global 6: Diseño de jerarquía de clases**
 - **(7.d, 7.e, 7.f, 7.g)**: Presenta la jerarquía de clases que diseñaste. ¿Cómo probaste y depuraste esta jerarquía para asegurar su correcto funcionamiento? ¿Qué tipo de herencia has utilizado: Especificación, Especialización, Extensión, Construcción?
-
+ La jerarquía de clases en mi proyecto está diseñada para reflejar las relaciones entre las diferentes entidades del juego. Por ejemplo, la clase Personaje es la clase base de la que heredan las clases Jugador y Enemigo, lo que refleja la relación de herencia entre estos dos tipos de personajes. Además, utilicé composición y agregación para representar relaciones más complejas entre objetos. Por ejemplo, la clase Jugador contiene una lista de ataques disponibles, representada por la interfaz DarAtaques.
 #### **Criterio global 7: Librerías de clases**
 - **(2.g, 4.k)**: Describe cualquier librería externa que hayas incorporado en tu proyecto. Explica cómo y por qué las elegiste, y cómo las incorporaste en tu proyecto. ¿Cómo extendió la funcionalidad de tu aplicación? Proporciona ejemplos específicos de su uso en tu proyecto.
-
+ Todas las funcionalidades requeridas fueron implementadas utilizando las clases y estructuras de datos proporcionadas por el lenguaje Kotlin y las bibliotecas estándar.
 #### **Criterio global 8: Documentado**
 - **(7.h)**: Muestra ejemplos de cómo has documentado y comentado tu código. ¿Que herramientas has utilizado? ¿Cómo aseguras que tu documentación aporte valor para la comprensión, mantenimiento y depuración del código?
-
+ Documenté mi código utilizando comentarios en línea para explicar la funcionalidad de clases, métodos y propiedades, así como los parámetros y valores de retorno de los métodos.
 #### **Criterio global 9: Genéricos**
 - **(6.f)**: Muestra ejemplos de tu código sobre cómo has implementado una clase con genéricos. ¿Qué beneficio has obtenido?
-
+ En mi código, implementé una clase con genéricos para mejorar la flexibilidad y reutilización del código. Por ejemplo, la interfaz DarAtaques utiliza genéricos para definir el tipo de ataques que puede proporcionar una clase que la implementa. 
